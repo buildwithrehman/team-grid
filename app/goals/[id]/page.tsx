@@ -48,7 +48,7 @@ export default async function GoalDetailPage({ params }: { params: Promise<{ id:
         <Link href="/goals" className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 dark:hover:text-gray-200 transition-colors mb-6">
           <ArrowLeft className="w-4 h-4 mr-2" /> Back to Goals
         </Link>
-        <div className="flex justify-between items-start">
+        <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-start">
           <div>
             <div className="flex items-center gap-3 mb-3">
               <Badge variant="outline" className="capitalize border-indigo-200 text-indigo-700 bg-indigo-50">
@@ -74,7 +74,7 @@ export default async function GoalDetailPage({ params }: { params: Promise<{ id:
       </div>
 
       <div className="bg-white dark:bg-[#111827] rounded-xl border border-gray-200 dark:border-gray-800 p-6">
-        <div className="flex justify-between items-end mb-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-end mb-4">
           <div>
             <h3 className="text-sm font-medium text-gray-500 mb-1">Overall Progress</h3>
             <div className="flex items-center gap-3">
@@ -100,7 +100,7 @@ export default async function GoalDetailPage({ params }: { params: Promise<{ id:
       </div>
 
       <div>
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center mb-6">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
             <Target className="w-5 h-5 text-indigo-600" /> Key Results
           </h2>

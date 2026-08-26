@@ -59,7 +59,7 @@ export function CreateMilestoneModal({ projectId }: { projectId: string }) {
             <Input id="target_date" name="target_date" type="date" required />
           </div>
 
-          <div className="pt-4 flex justify-end space-x-2">
+          <div className="pt-4 flex flex-col-reverse sm:flex-row sm:justify-end gap-2">
             <Button type="button" variant="outline" onClick={() => setOpen(false)} disabled={loading}>
               Cancel
             </Button>

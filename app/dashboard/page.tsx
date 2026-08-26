@@ -109,28 +109,52 @@ export default async function DashboardPage() {
 
   return (
     <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 space-y-8">
-      <div className="flex justify-between items-start">
+      <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-start">
         <div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Team Dashboard</h1>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
             Your command center for project health and team activity.
           </p>
         </div>
-        <div className="flex gap-4 items-center flex-wrap justify-end">
-          <Link href="/projects" className="text-sm font-medium text-[#4F46E5] hover:underline">Projects</Link>
-          <Link href="/goals" className="text-sm font-medium text-[#4F46E5] hover:underline">Goals</Link>
-          <Link href="/learning" className="text-sm font-medium text-[#4F46E5] hover:underline">Learning</Link>
-          <Link href="/checkins" className="text-sm font-medium text-[#4F46E5] hover:underline">Check-ins</Link>
-          <Link href="/blockers" className="text-sm font-medium text-red-600 hover:underline">Blockers</Link>
-          <Link href="/activity" className="text-sm font-medium text-[#4F46E5] hover:underline">Activity</Link>
-          <Link href="/analytics" className="text-sm font-medium text-[#4F46E5] hover:underline">Analytics</Link>
-          <Link href="/insights" className="text-sm font-medium text-[#4F46E5] hover:underline flex items-center gap-1"><Sparkles className="w-3 h-3"/> Insights</Link>
-          <Link href="/integrations" className="text-sm font-medium text-[#4F46E5] hover:underline">Integrations</Link>
-          <div className="mx-2 h-6 w-px bg-gray-200 dark:bg-gray-800" />
-          <NotificationBell notifications={notifications || []} />
-          <form action={logout}>
-            <Button variant="outline" size="sm">Logout</Button>
-          </form>
+        <div className="w-full sm:w-auto">
+          <details className="sm:hidden group">
+            <summary className="flex h-9 w-full cursor-pointer list-none items-center justify-between rounded-md border border-gray-200 bg-white px-3 text-sm font-medium text-gray-700 shadow-sm dark:border-gray-800 dark:bg-[#111827] dark:text-gray-200">
+              <span>Team navigation</span>
+              <span className="text-lg leading-none transition-transform group-open:rotate-180">⌄</span>
+            </summary>
+            <nav className="mt-2 grid grid-cols-2 gap-2 rounded-lg border border-gray-200 bg-white p-3 shadow-sm dark:border-gray-800 dark:bg-[#111827]" aria-label="Team navigation">
+              <Link href="/projects" className="rounded-md px-2 py-2 text-sm font-medium text-[#4F46E5] hover:bg-indigo-50 dark:hover:bg-indigo-900/20">Projects</Link>
+              <Link href="/goals" className="rounded-md px-2 py-2 text-sm font-medium text-[#4F46E5] hover:bg-indigo-50 dark:hover:bg-indigo-900/20">Goals</Link>
+              <Link href="/learning" className="rounded-md px-2 py-2 text-sm font-medium text-[#4F46E5] hover:bg-indigo-50 dark:hover:bg-indigo-900/20">Learning</Link>
+              <Link href="/checkins" className="rounded-md px-2 py-2 text-sm font-medium text-[#4F46E5] hover:bg-indigo-50 dark:hover:bg-indigo-900/20">Check-ins</Link>
+              <Link href="/blockers" className="rounded-md px-2 py-2 text-sm font-medium text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20">Blockers</Link>
+              <Link href="/activity" className="rounded-md px-2 py-2 text-sm font-medium text-[#4F46E5] hover:bg-indigo-50 dark:hover:bg-indigo-900/20">Activity</Link>
+              <Link href="/analytics" className="rounded-md px-2 py-2 text-sm font-medium text-[#4F46E5] hover:bg-indigo-50 dark:hover:bg-indigo-900/20">Analytics</Link>
+              <Link href="/insights" className="flex items-center gap-1 rounded-md px-2 py-2 text-sm font-medium text-[#4F46E5] hover:bg-indigo-50 dark:hover:bg-indigo-900/20"><Sparkles className="h-3 w-3"/> Insights</Link>
+              <Link href="/integrations" className="rounded-md px-2 py-2 text-sm font-medium text-[#4F46E5] hover:bg-indigo-50 dark:hover:bg-indigo-900/20">Integrations</Link>
+              <Link href="/notifications" className="rounded-md px-2 py-2 text-sm font-medium text-[#4F46E5] hover:bg-indigo-50 dark:hover:bg-indigo-900/20">Notifications</Link>
+              <form action={logout} className="col-span-2">
+                <Button variant="outline" size="sm" className="w-full">Logout</Button>
+              </form>
+            </nav>
+          </details>
+
+          <div className="hidden sm:flex flex-wrap gap-x-4 gap-y-2 items-center justify-end">
+            <Link href="/projects" className="text-sm font-medium text-[#4F46E5] hover:underline">Projects</Link>
+            <Link href="/goals" className="text-sm font-medium text-[#4F46E5] hover:underline">Goals</Link>
+            <Link href="/learning" className="text-sm font-medium text-[#4F46E5] hover:underline">Learning</Link>
+            <Link href="/checkins" className="text-sm font-medium text-[#4F46E5] hover:underline">Check-ins</Link>
+            <Link href="/blockers" className="text-sm font-medium text-red-600 hover:underline">Blockers</Link>
+            <Link href="/activity" className="text-sm font-medium text-[#4F46E5] hover:underline">Activity</Link>
+            <Link href="/analytics" className="text-sm font-medium text-[#4F46E5] hover:underline">Analytics</Link>
+            <Link href="/insights" className="text-sm font-medium text-[#4F46E5] hover:underline flex items-center gap-1"><Sparkles className="w-3 h-3"/> Insights</Link>
+            <Link href="/integrations" className="text-sm font-medium text-[#4F46E5] hover:underline">Integrations</Link>
+            <div className="mx-2 h-6 w-px bg-gray-200 dark:bg-gray-800" />
+            <NotificationBell notifications={notifications || []} />
+            <form action={logout}>
+              <Button variant="outline" size="sm">Logout</Button>
+            </form>
+          </div>
         </div>
       </div>
 

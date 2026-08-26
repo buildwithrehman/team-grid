@@ -46,7 +46,7 @@ export function CreateTaskModal({ projectId, members }: { projectId: string, mem
       <DialogTrigger className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium h-9 px-4 py-2 bg-[#4F46E5] hover:bg-[#4338CA] text-white">
         <PlusCircle className="mr-2 h-4 w-4" /> Add Task
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[500px]">
+      <DialogContent className="sm:max-w-[500px] max-h-[calc(100dvh-1rem)]">
         <DialogHeader>
           <DialogTitle>Create New Task</DialogTitle>
         </DialogHeader>
@@ -61,7 +61,7 @@ export function CreateTaskModal({ projectId, members }: { projectId: string, mem
             <Textarea id="description" name="description" placeholder="Add details..." rows={3} />
           </div>
           
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="status">Status</Label>
               <Select name="status" defaultValue="todo">
@@ -92,7 +92,7 @@ export function CreateTaskModal({ projectId, members }: { projectId: string, mem
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="assigned_to">Assignee</Label>
               <Select name="assigned_to">
@@ -115,7 +115,7 @@ export function CreateTaskModal({ projectId, members }: { projectId: string, mem
             </div>
           </div>
 
-          <div className="pt-4 flex justify-end space-x-2">
+          <div className="pt-4 flex flex-col-reverse sm:flex-row sm:justify-end gap-2">
             <Button type="button" variant="outline" onClick={() => setOpen(false)} disabled={loading}>
               Cancel
             </Button>

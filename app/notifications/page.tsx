@@ -42,7 +42,7 @@ export default async function NotificationsPage({ searchParams }: { searchParams
 
   return (
     <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8 space-y-6">
-      <div className="flex justify-between items-end border-b border-gray-200 dark:border-gray-800 pb-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-end border-b border-gray-200 dark:border-gray-800 pb-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
             <Bell className="w-6 h-6 text-indigo-600" /> Notifications
@@ -89,11 +89,11 @@ export default async function NotificationsPage({ searchParams }: { searchParams
                   <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
                     {notif.message}
                   </p>
-                  <div className="mt-3 flex items-center justify-between">
+                  <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                     <span className="text-xs text-gray-400 font-medium tracking-wide">
                       {formatDistanceToNow(new Date(notif.created_at), { addSuffix: true })}
                     </span>
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-wrap items-center gap-3">
                       {!notif.read_at && (
                         <form action={async () => { 'use server'; await markAsRead(notif.id); }}>
                           <button type="submit" className="text-xs font-medium text-gray-500 hover:text-indigo-600">

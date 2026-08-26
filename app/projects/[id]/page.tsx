@@ -151,7 +151,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         <div className="md:col-span-2 space-y-6">
           <div className="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 rounded-xl p-6 shadow-sm">
             <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Project Information</h2>
-            <div className="grid grid-cols-2 gap-y-4 gap-x-8 text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-sm">
               <div>
                 <span className="block text-gray-500 mb-1">Owner</span>
                 <span className="font-medium">{project.profiles?.full_name || 'Unknown User'}</span>

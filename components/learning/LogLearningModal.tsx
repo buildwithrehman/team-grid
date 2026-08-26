@@ -52,7 +52,7 @@ export function LogLearningModal() {
             <Input id="title" name="title" required placeholder="E.g., Finished Supabase Auth Tutorial" />
           </div>
           
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label>Format / Type</Label>
               <Select value={type} onValueChange={(v) => setType(v || 'course')}>
@@ -73,7 +73,7 @@ export function LogLearningModal() {
             </div>
           </div>
 
-          <div className="pt-4 flex justify-end space-x-2">
+          <div className="pt-4 flex flex-col-reverse sm:flex-row sm:justify-end gap-2">
             <Button type="button" variant="outline" onClick={() => setOpen(false)} disabled={loading}>
               Cancel
             </Button>

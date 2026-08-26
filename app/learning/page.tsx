@@ -50,7 +50,7 @@ export default async function LearningDashboardPage() {
 
   return (
     <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 space-y-8">
-      <div className="flex justify-between items-start">
+      <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-start">
         <div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
             <BookOpen className="w-8 h-8 text-indigo-600" /> My Learning & Growth
@@ -59,7 +59,7 @@ export default async function LearningDashboardPage() {
             Track your professional development, skills, and goals.
           </p>
         </div>
-        <div className="flex gap-2 flex-wrap">
+        <div className="flex w-full flex-wrap gap-2 sm:w-auto sm:justify-end">
           <Link href="/dashboard" className="text-sm font-medium text-gray-500 hover:text-indigo-600 self-center mr-4">Back to Dashboard</Link>
           <CreateTargetModal />
           <AddSkillModal />
@@ -89,7 +89,7 @@ export default async function LearningDashboardPage() {
               {userSkills?.length === 0 ? (
                 <div className="text-center py-6 text-sm text-gray-500">No skills added yet. Add your current expertise!</div>
               ) : (
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                   {userSkills?.map(us => (
                     <div key={us.id} className="p-3 rounded-lg border border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800/30">
                       <div className="flex justify-between items-start mb-2">

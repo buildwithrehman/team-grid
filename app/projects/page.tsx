@@ -84,7 +84,7 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
           {projects.map((project: any) => (
             <Link key={project.id} href={`/projects/${project.id}`} className="group block">
               <div className="p-6 bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex justify-between items-start mb-4">
+                <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-start mb-4">
                   <h3 className="font-semibold text-lg text-[#4F46E5] group-hover:underline truncate pr-2">
                     {project.name}
                   </h3>

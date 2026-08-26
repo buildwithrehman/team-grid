@@ -65,7 +65,7 @@ export function GoalsTabs({ goals, currentUserId }: { goals: any[], currentUserI
           <Link key={goal.id} href={`/goals/${goal.id}`}>
             <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-gray-200 dark:border-gray-800 bg-white dark:bg-[#111827]">
               <CardContent className="p-6">
-                <div className="flex justify-between items-start mb-4">
+                <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-start mb-4">
                   <Badge variant="outline" className={`${getStatusColor(goal.status)} capitalize border-none`}>
                     {goal.status.replace('_', ' ')}
                   </Badge>

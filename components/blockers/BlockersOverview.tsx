@@ -32,7 +32,7 @@ export function BlockersOverview({ blockers }: { blockers: any[] }) {
       <div className="space-y-3">
         {items.map(blocker => (
           <div key={blocker.id} className="bg-white dark:bg-[#111827] p-4 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-            <div className="flex justify-between items-start mb-2">
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-start mb-2">
               <Badge variant="outline" className={`text-[10px] uppercase ${getSeverityBadge(blocker.severity)}`}>
                 {blocker.severity}
               </Badge>

@@ -25,11 +25,11 @@ export function TaskList({ tasks, projectId, members }: { tasks: any[], projectI
   }
 
   return (
-    <div className="rounded-md border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#111827] overflow-hidden">
-      <Table>
+    <div className="rounded-md border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#111827] overflow-x-auto">
+      <Table className="min-w-[760px]">
         <TableHeader className="bg-gray-50 dark:bg-gray-800/50">
           <TableRow>
-            <TableHead className="w-[40%]">Title</TableHead>
+            <TableHead className="w-[32%] min-w-[240px]">Title</TableHead>
             <TableHead>Status</TableHead>
             <TableHead>Priority</TableHead>
             <TableHead>Assignee</TableHead>

@@ -48,7 +48,7 @@ export function CreateKeyResultModal({ goalId }: { goalId: string }) {
             <Input id="title" name="title" required placeholder="E.g., Reach 1,000 signups" />
           </div>
           
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="current_value">Starting Value</Label>
               <Input id="current_value" name="current_value" type="number" defaultValue="0" step="any" />
@@ -59,7 +59,7 @@ export function CreateKeyResultModal({ goalId }: { goalId: string }) {
             </div>
           </div>
 
-          <div className="pt-4 flex justify-end space-x-2">
+          <div className="pt-4 flex flex-col-reverse sm:flex-row sm:justify-end gap-2">
             <Button type="button" variant="outline" onClick={() => setOpen(false)} disabled={loading}>
               Cancel
             </Button>

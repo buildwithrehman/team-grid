@@ -28,7 +28,7 @@ export default async function CheckinsPage() {
 
   return (
     <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8 space-y-8">
-      <div className="flex justify-between items-end">
+      <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-end">
         <div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
             <ClipboardList className="w-8 h-8 text-indigo-600" /> My Weekly Check-in
@@ -37,7 +37,7 @@ export default async function CheckinsPage() {
             {formatWeekLabel(boundaries.week_start_date)}
           </p>
         </div>
-        <div className="flex gap-4">
+        <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
           <Link href="/checkins/team">
             <Button variant="outline">Team Overview</Button>
           </Link>

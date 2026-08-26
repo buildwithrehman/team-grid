@@ -50,7 +50,7 @@ export function KeyResultsList({ goalId, keyResults }: { goalId: string, keyResu
 
               return (
                 <div key={kr.id} className={`bg-white dark:bg-[#111827] rounded-xl border p-5 transition-colors ${isCompleted ? 'border-green-200 dark:border-green-900/30' : 'border-gray-200 dark:border-gray-800'}`}>
-                  <div className="flex justify-between items-start mb-4">
+                  <div className="flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-start mb-4">
                     <div className="flex items-start gap-3">
                       {isCompleted ? (
                         <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />

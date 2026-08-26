@@ -62,7 +62,7 @@ export function CreateGoalModal() {
             <Textarea id="description" name="description" rows={3} placeholder="Describe the goal's objective..." />
           </div>
           
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="goal_type">Goal Type</Label>
               <Select name="goal_type" value={goalType} onValueChange={(val) => setGoalType(val || 'personal')}>
@@ -96,7 +96,7 @@ export function CreateGoalModal() {
             </div>
           )}
 
-          <div className="pt-4 flex justify-end space-x-2">
+          <div className="pt-4 flex flex-col-reverse sm:flex-row sm:justify-end gap-2">
             <Button type="button" variant="outline" onClick={() => setOpen(false)} disabled={loading}>
               Cancel
             </Button>

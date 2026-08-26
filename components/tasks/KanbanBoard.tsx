@@ -50,7 +50,7 @@ export function KanbanBoard({ tasks, projectId, members }: { tasks: any[], proje
         return (
           <div 
             key={col.id} 
-            className={`flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-[#111827]/50 min-h-[500px] overflow-hidden`}
+            className={`flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-[#111827]/50 min-h-[300px] md:min-h-[500px] overflow-hidden`}
             onDragOver={handleDragOver}
             onDrop={(e) => handleDrop(e, col.id)}
           >
@@ -85,7 +85,18 @@ export function KanbanBoard({ tasks, projectId, members }: { tasks: any[], proje
                     </div>
                   </div>
 
-                  <div className="flex justify-between items-center">
+                  <div className="flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-center">
+                    <select
+                      aria-label={`Move ${task.title}`}
+                      value={task.status}
+                      onChange={(e) => updateTaskStatus(task.id, projectId, e.target.value)}
+                      className="md:hidden w-full h-9 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-2 text-xs text-gray-700 dark:text-gray-200"
+                    >
+                      {COLUMNS.map(option => (
+                        <option key={option.id} value={option.id}>{option.label}</option>
+                      ))}
+                    </select>
+                    <div className="flex justify-between items-center w-full">
                     {task.assigned_to ? (
                       <div className="w-6 h-6 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center text-[10px] font-bold" title={task.assignee?.full_name}>
                         {task.assignee?.full_name?.charAt(0).toUpperCase() || 'U'}
@@ -101,6 +112,7 @@ export function KanbanBoard({ tasks, projectId, members }: { tasks: any[], proje
                         {new Date(task.deadline).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
                       </span>
                     )}
+                    </div>
                   </div>
                 </div>
               ))}

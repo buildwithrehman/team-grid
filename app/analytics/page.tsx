@@ -18,7 +18,7 @@ export default async function AnalyticsPage() {
 
   return (
     <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 space-y-8">
-      <div className="flex justify-between items-end border-b border-gray-200 dark:border-gray-800 pb-4">
+      <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-end border-b border-gray-200 dark:border-gray-800 pb-4">
         <div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
             <BarChart3 className="w-8 h-8 text-indigo-600" /> Team Analytics

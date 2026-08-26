@@ -22,7 +22,7 @@ export default async function ActivityPage() {
 
   return (
     <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8 space-y-6">
-      <div className="flex justify-between items-end border-b border-gray-200 dark:border-gray-800 pb-4">
+      <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-end border-b border-gray-200 dark:border-gray-800 pb-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
             <Activity className="w-6 h-6 text-indigo-600" /> Team Activity

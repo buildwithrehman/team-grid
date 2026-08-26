@@ -53,7 +53,7 @@ export function AddSkillModal() {
             <Input id="skill_name" name="skill_name" required placeholder="E.g., React, Python, UI Design" />
           </div>
           
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label>Category</Label>
               <Select value={category} onValueChange={(v) => setCategory(v || 'programming')}>
@@ -81,7 +81,7 @@ export function AddSkillModal() {
             </div>
           </div>
 
-          <div className="pt-4 flex justify-end space-x-2">
+          <div className="pt-4 flex flex-col-reverse sm:flex-row sm:justify-end gap-2">
             <Button type="button" variant="outline" onClick={() => setOpen(false)} disabled={loading}>
               Cancel
             </Button>
